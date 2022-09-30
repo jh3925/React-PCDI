@@ -11,8 +11,9 @@ function Navbar() {
       <div className="App-navlinks">
         <a href="./">Home</a>
         <a href="./">About Us</a>
-        <a href="https://ookiinamanga.com/">Ookii Na Manga</a>
+        <a href="https://ookiinamanga.com/">Ookii na Manga</a>
         <a href="./">Lula</a>
+        <a href="./">Contact</a>
       </div>
     </div>
   )
@@ -21,9 +22,12 @@ function Navbar() {
 function Home() {
   return (
     <div className="App-body">
-      <p>
-      PCDI is a tech company developing and using disruptive technology to create, enter, and innovate niche B2B and B2C markets and industries. PCDI's first target is vending machines across the US.
-      Here at PCDI we are driven to provide the world with convenience through technological disruption.</p>
+      <div>
+        <h1>About Us</h1>
+        <p>
+        PCDI is a tech company developing and using disruptive technology to create, enter, and innovate niche B2B and B2C markets and industries. PCDI's first target is vending machines across the US.
+        Here at PCDI we are driven to provide the world with convenience through technological disruption.</p>
+      </div>
       <div>
         <h1>Our Subsidiaries</h1>
         <p>Lula is the Future of Automated Retail. It is a marketplace for the vending machine industry connecting vendors, suppliers, and consumers.</p>
