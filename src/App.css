@@ -36,53 +36,18 @@ Linear Gradient:
   text-align: center;
 }
 
-.App-logo {
-  height: 5vmin;
-  pointer-events: none;
-}
-
-.App-navbar {
-  background-color: #1F1F1F;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 17vmin;
-  border-bottom: 2px solid var(--text-color);
-}
-
-.App-navlinks{
-  height: 5vmin;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  width: 45vmax;
-  color: var(--secondary-color)
-}
-
-.App-navlinks a, p {
-  color: #CFCFCF;
-  font-size: calc(10px + 2vmin);
-  text-decoration: none;
-  margin-left: 5vmin;
-}
-
 .App-body {
   background-color: var(--body-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 20vmin;
+  padding: 0 10%;
 }
 
 .App-body h1 {
   color: var(--text-color);
-  font-size: calc(15px + 2vmin);
+  font-size: 2.2em;
+  text-decoration: none;
 }
 
-.App-body h1 {
-  color: var(--text-color);
-  font-size: calc(10px + 2vmin);
-}

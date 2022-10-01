@@ -1,26 +1,11 @@
 import React from 'react';
-import logo from './assets/pcdi-logo-dark.png';
 import './App.css';
 
-//This App.tsx file serves as a place to build components together. 
-//It may be placed into seperate files later.
+import Navbar from './components/Navbar/Navbar'
+import CardContainer from './components/CardContainer/CardContainer';
 
-function Navbar() {
-  return (
-    <div className="App-navbar">
-      <a href="./"> 
-        <img src={logo} className="App-logo" alt="PCDI logo"></img>
-      </a>
-      <div className="App-navlinks">
-        <a href="./">Home</a>
-        <a href="./">About Us</a>
-        <a href="https://ookiinamanga.com/">Ookii na Manga</a>
-        <a href="./">Lula</a>
-        <a href="./">Contact</a>
-      </div>
-    </div>
-  )
-}
+import LulaLogo from './assets/lula-logo-dark.png'
+import OnMLogo from './assets/onm-logo-dark.png'
 
 function Home() {
   return (
@@ -34,8 +19,14 @@ function Home() {
       </div>
       <div>
         <h1>Our Subsidiaries</h1>
-        <p>Lula is the Future of Automated Retail. It is a marketplace for the vending machine industry connecting vendors, suppliers, and consumers."</p>
-        <p>OnM is the go-to online marketplace for all prints associated with manga, comics, and similar art types. OnM provides a unique and distinct community for weebs to discover, transform, preserve, and share their passion through our customizable print options including electronics, wall decor, home goods, etc.</p>
+        <CardContainer 
+          title="Ookii na Manga" 
+          description="OnM is the go-to online marketplace for all prints associated with manga, comics, and similar art types. OnM provides a unique and distinct community for weebs to discover, transform, preserve, and share their passion through our customizable print options including electronics, wall decor, home goods, etc." 
+          image={OnMLogo}/>
+        <CardContainer 
+          title='Lula' 
+          description='Lula is the Future of Automated Retail. It is a marketplace for the vending machine industry connecting vendors, suppliers, and consumers.' 
+          image={LulaLogo} />
       </div>
     </div>
   )

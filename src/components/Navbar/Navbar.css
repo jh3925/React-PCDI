@@ -1,0 +1,31 @@
+.logo {
+    height: 5vmin;
+    pointer-events: none;
+}
+  
+.nav {
+    background-color: #1F1F1F;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    border-bottom: 2px solid var(--text-color);
+}
+  
+.navlinks{
+    height: 5vmin;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 45vmax;
+    color: var(--secondary-color)
+}
+  
+.navlinks a, p {
+    color: #CFCFCF;
+    font-size: calc(7px + 2vmin);
+    text-decoration: none;
+    margin-left: 5vmin;
+}
