@@ -1,10 +1,9 @@
 
-/*Colors
+/*PCDI Colors
 PCDI:
 Purple: #5E20E4 
 Dark: #1B1B1B
 Light: #BFBFBF
-
 Dark-Logo-Background: #1F1F1F
 
 OnM:
@@ -13,7 +12,18 @@ White: #FFF
 Dark: #1B1B1B
 Purple: #5E20E4
 
-#E5E5E5
+Lula:
+Purple Linear Gradient:
+#5D05B6
+#8634D8 
+
+Teal? Linear Gradient:
+#7DE7D3
+#4AF4D7
+
+Linear Gradient:
+#8634D8
+#4AF4D7
 */
 
 :root {
@@ -64,7 +74,6 @@ Purple: #5E20E4
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 0 20vmin;
 }
 
