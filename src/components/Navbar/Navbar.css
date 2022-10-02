@@ -25,7 +25,7 @@
   
 .navlinks a, p {
     color: #CFCFCF;
-    font-size: calc(7px + 2vmin);
+    font-size: calc(7px + 1vmax);
     text-decoration: none;
-    margin-left: 5vmin;
+    margin-left: 2vmax;
 }
