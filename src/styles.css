@@ -1,4 +1,42 @@
-.home-body {
+
+/*PCDI Colors
+PCDI:
+Purple: #5E20E4 
+Dark: #1B1B1B
+Light: #BFBFBF
+Dark-Logo-Background: #1F1F1F
+
+OnM:
+Dark-Gray: #292929
+White: #FFF
+Dark: #1B1B1B
+Purple: #5E20E4
+
+Lula:
+Purple Linear Gradient:
+#5D05B6
+#8634D8 
+
+Teal? Linear Gradient:
+#7DE7D3
+#4AF4D7
+
+Linear Gradient:
+#8634D8
+#4AF4D7
+*/
+
+:root {
+  --text-color: #E4E4E4;
+  --body-color: #1F1F1F;
+  --secondary-color: #5E20E4;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-body {
   box-sizing: border-box;
   background-color: var(--body-color);
   min-height: 100vh;
@@ -7,40 +45,40 @@
   text-decoration: none;
 }
 
-.hero-Container {
+.Hero-Container {
   box-sizing: border-box;
   background-image: url(./assets/pcdi-background-dark.png);
   background-size: cover;
   background-attachment: fixed;
   background-color: #00000000;
   padding: 30vh 10%;
-  min-height: 90vh;
+  height: 90vh;
 }
 
-.hero-Container h1 {
+.Hero-Container h1 {
   color: var(--text-color);
-  font-size: calc(14px + 5vmin);
+  font-size: calc(14px + 1.7vmax);
   margin: auto;
   margin-bottom: 1vmax;
 }
 
-.hero-Container p {
+.Hero-Container p {
   color: var(--text-color);
-  font-size: calc(5px + 3vmin);
+  font-size: calc(5px + 1vmax);
   margin: auto;
 }
 
-.body {
+.Body {
   box-sizing: border-box;
   padding: 2% 10%;
 }
 
-#body {
+#Body {
   color: var(--text-color);
   font-size: calc(14px + 1.5vmax);
   margin: auto;
 }
 
-.debug-border {
+.DebugBorder {
   border: 1px solid;
 }

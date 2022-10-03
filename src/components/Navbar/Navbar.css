@@ -4,8 +4,9 @@
 }
   
 .nav {
+    box-sizing: border-box;
     background-color: #1F1F1F;
-    min-height: 10vh;
+    height: 10vh;
     display: flex;
     flex-direction: row;
     align-items: center;
