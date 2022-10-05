@@ -6,7 +6,7 @@
 .nav {
     box-sizing: border-box;
     background-color: #1F1F1F;
-    height: 10vh;
+    height: 8vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -18,7 +18,7 @@
 .navlinks{
     height: 5vmin;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     width: 45vmax;
     color: var(--secondary-color)

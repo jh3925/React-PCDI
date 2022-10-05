@@ -12,9 +12,6 @@
 
 .card-container-img {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     width: 21%;
     max-height: 100%;
     margin: 0;
@@ -30,8 +27,6 @@
 }
 
 .card-container-text {
-    display: flex;
-    flex-direction: column;
     width: 69%;
     height: 100%;
     padding: 0 3%;
@@ -45,7 +40,7 @@
 }
 
 .card-container-text p {
-    height: auto;
+    height: fit-content;
     font-size: 1.3em;
     margin: -2% 0 4% 2%;
 }

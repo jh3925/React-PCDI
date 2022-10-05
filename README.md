@@ -1,3 +1,13 @@
+To launch the React landing page, make sure node_modules is installed in the project directory.
+
+If it isn't present, run:
+### `npm install node`
+
+To start, run:
+### `npm start`
+
+-----------------------------------------------------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
