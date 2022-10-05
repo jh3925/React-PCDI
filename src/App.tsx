@@ -24,10 +24,12 @@ function Home() {
         <CardContainer
           title="Ookii na Manga" 
           description="OnM is the go-to online marketplace for all prints associated with manga, comics, and similar art types. OnM provides a unique and distinct community for weebs to discover, transform, preserve, and share their passion through our customizable print options including electronics, wall decor, home goods, etc." 
-          image={OnMLogo}/>
+          image={OnMLogo}
+          link="https://ookiinamanga.com"
+          linkString="Visit Ookii na Manga"/>
         <CardContainer 
           title='Lula' 
-          description='Lula is the Future of Automated Retail. It is a marketplace for the vending machine industry connecting vendors, suppliers, and consumers.' 
+          description='Lula is the future of Automated Retail. It is a digital marketplace for the vending machine industry connecting vendors, suppliers, and consumers. Through the digital marketplace, Lula will provide a quick and easy way to help connect and simplify transactions between consumers and vendors, and network suppliers with the vendors.'
           image={LulaLogo} />
       </div>
     </div>

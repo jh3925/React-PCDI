@@ -4,12 +4,14 @@ import './CardContainer.css'
 import DefaultLogo from '../../assets/pcdi-logo-dark.png'
 
 interface CardProps {
-    title: string;
-    description: string;
+    title?: string;
+    description?: string;
     image?: string;
+    link?: string;
+    linkString?: string;
 }
-  
-function CardContianer({ title, description, image = DefaultLogo}: CardProps): JSX.Element {
+
+function CardContianer({ title, description, image = DefaultLogo, link, linkString = "Learn more"}: CardProps): JSX.Element {
     return (
         <div className="card-container">
             <div className="card-container-img">
@@ -18,6 +20,7 @@ function CardContianer({ title, description, image = DefaultLogo}: CardProps): J
             <div className="card-container-text">
                 <h1>{title}</h1>
                 <p>{description}</p>
+                {link ? <a href={link}>{linkString}</a> : false}
             </div>
         </div>
     )

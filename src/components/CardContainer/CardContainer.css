@@ -40,7 +40,20 @@
 }
 
 .card-container-text p {
-    height: fit-content;
+    display: flex;
+    min-height: 6vmax;
     font-size: 1.3em;
     margin: -2% 0 4% 2%;
+}
+
+.card-container-text a {
+    display:flex;
+    text-decoration: none;
+    color: #5E20E4;
+    font-size: 1.3em;
+    margin-top: -1vmax;
+    margin-left: auto;
+    margin-bottom: 1vmax;
+    text-align: center;
+    width: fit-content;
 }
