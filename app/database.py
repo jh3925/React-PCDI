@@ -1,3 +1,5 @@
+#This file is used to reference the database and create a session
+
 import sqlalchemy as SQL
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
