@@ -1,12 +1,12 @@
-import sqlalchemy as _sql
-import sqlalchemy.ext.declarative as _declarative
-import sqlalchemy.orm as _orm
+import sqlalchemy as SQL
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
 #Change (USER) to your username, (PASSWORD) to password, and (DATABASE NAME) to your database name 
 DATABASE_URL = "postgresql://(USER):(PASSWORD)@localhost:5432/(DATABASE NAME)"
 
-engine = _sql.create_engine(DATABASE_URL)
+engine = SQL.create_engine(DATABASE_URL)
 
-SessionLocal = _orm.sessionmaker(autocommit=False, autoflush=False, bind=engine)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-Base = _declarative.declarative_base()
+Base = declarative_base()
