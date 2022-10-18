@@ -1,11 +1,14 @@
-import datetime as _dt
-import sqlalchemy as _sql
+#Example models.py
+#TODO: add passwords/password hashing via OAuth2
 
-import database as _database
+import datetime as DateTime
+import sqlalchemy as SQL
 
-class User(_database.Base):
+from database import Base
+
+class User(Base):
     __tablename__ = "users"
-    id = _sql.Column(_sql.Integer, primary_key=True, index=True)
-    username = _sql.Column(_sql.String, unique=True, index=True)
-    email = _sql.Column(_sql.String, unique=True, index=True)
-    date_created = _sql.Column(_sql.DateTime, default=_dt.datetime.utcnow)
+    id = SQL.Column(SQL.Integer, primary_key=True, index=True)
+    username = SQL.Column(SQL.String, unique=True, index=True)
+    email = SQL.Column(SQL.String, unique=True, index=True)
+    date_created = SQL.Column(SQL.DateTime, default=DateTime.datetime.utcnow)
