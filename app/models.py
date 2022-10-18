@@ -9,5 +9,3 @@ class User(_database.Base):
     username = _sql.Column(_sql.String, unique=True, index=True)
     email = _sql.Column(_sql.String, unique=True, index=True)
     date_created = _sql.Column(_sql.DateTime, default=_dt.datetime.utcnow)
-
-    items = _sql.orm.relationship("Item", back_populates="owner")
