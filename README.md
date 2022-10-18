@@ -1,7 +1,8 @@
+Before starting, make sure npm is installed.
 To launch the React landing page, make sure node_modules is installed in the project directory.
 
 If it isn't present, run:
-### `npm install node`
+### `npm install`
 
 To start, run:
 ### `npm start`
