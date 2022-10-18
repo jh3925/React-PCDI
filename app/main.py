@@ -1,7 +1,5 @@
 from typing import Union, TYPE_CHECKING
 from fastapi import FastAPI, Depends
-from pydantic import BaseModel
-from sqlalchemy.orm.base import PASSIVE_NO_FETCH_RELATED
 import sqlalchemy.orm.session as Session
 
 from services import get_db
