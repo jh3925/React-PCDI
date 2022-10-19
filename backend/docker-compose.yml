@@ -7,6 +7,8 @@ services:
       - .:/app
     ports:
       - "8000:8000"
+    
+ #ADDING DB
     environment:
       - DATABASE_URL=postgresql://fastapi_traefik:fastapi_traefik@db:5432/fastapi_traefik
     depends_on:
