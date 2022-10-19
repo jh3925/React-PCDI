@@ -18,5 +18,5 @@ RUN pip install -r requirements.txt
 #Copy the project
 COPY . .
 
-#Change working directory to src
-WORKDIR /app/src
+#change working directory to /app/app
+WORKDIR /app/app
