@@ -12,8 +12,11 @@ ENV PYTHONPATH "${PYTHONPATH}:/app"
 
 #Install dependencies
 RUN pip install --upgrade pip
-COPY requirement.txt .
-RUN pip install -r requirement.txt
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
 #Copy the project
 COPY . .
+
+#Change working directory to src
+WORKDIR /app/src
