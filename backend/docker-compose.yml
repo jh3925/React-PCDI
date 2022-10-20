@@ -10,7 +10,7 @@ services:
     
  #ADDING DB
     environment:
-      - DATABASE_URL=postgresql://fastapi_traefik:fastapi_traefik@db:5432/fastapi_traefik
+      - DATABASE_URL=postgresql://user:password@db:5432/fastapi_db
     depends_on:
       - db
   db:
@@ -20,9 +20,9 @@ services:
     expose:
       - 5432
     environment:
-      - POSTGRES_USER=fastapi_traefik
-      - POSTGRES_PASSWORD=fastapi_traefik
-      - POSTGRES_DB=fastapi_traefik
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=fastapi_db
 
 volumes:
   postgres_data:
