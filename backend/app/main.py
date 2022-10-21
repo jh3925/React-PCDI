@@ -14,7 +14,7 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 
-SECRET_KEY = "f894fe55f80b0f9dfc01b84d26a6d88020bb0e707f1a84159e19142020efe6e5"
+SECRET_KEY = "f894fe55f80b0f9dfc01b84d26a6d88020bb0e707f1a84159e19142020efe6e5" #Example secret key, replace with your own with "openssl rand -hex 32" in bash.
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 TOKEN_SECRET = "secret"
