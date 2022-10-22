@@ -4,30 +4,12 @@ import database as Database
 import models as Models
 from sqlalchemy.orm import Session
 
-from passlib.context import CryptContext
+from auth import get_password_hash
 
 #Create a table (if it doesn't exist) based on the models.py file
 def create_table():
     Database.Base.metadata.create_all(bind=Database.engine)
-
-#Band aid fix for the database not being created on startup
-Database.Base.metadata.create_all(bind=Database.engine)
-
-#Access the database
-def get_db():
-    db = Database.SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
-
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-def get_password_hash(password: str):
-    return pwd_context.hash(password)
-
-def verify_password(plain_password: str, hashed_password: str):
-    return pwd_context.verify(plain_password, hashed_password)
+create_table()
 
 #CRUD operations for the User table
 #Create
