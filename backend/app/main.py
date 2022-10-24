@@ -14,14 +14,13 @@ import auth as Auth
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 
 app = FastAPI(title="FastAPI, Docker, OAuth2, and PostgreSQL exercise")
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/token")
 
 @app.post("/api/token", response_model=Schemas.Token)
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(Database.get_db)):
     return Auth.login_for_access_token(form_data, db)
 
-@app.get("/users/me/")
-async def read_users_me(current_user: User = Depends(Auth.get_current_user)):
+@app.get("api/users/me", response_model=Schemas.User)
+async def read_users_me(current_user: Schemas.User = Depends(Auth.get_current_user)):
     return current_user
 
 #standard Hello World route

@@ -6,8 +6,7 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 
-import database as Database
-from database import SessionLocal, engine
+from database import SessionLocal, engine, get_db
 import services as Services
 from models import User
 from schemas import Token, TokenData
@@ -20,14 +19,17 @@ ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 10
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/token")
 
+#Gets a password hash from a plaintext password
 def get_password_hash(password: str):
     return pwd_context.hash(password)
 
+#Verify password
 def verify_password(plain_password: str, hashed_password: str):
     return pwd_context.verify(plain_password, hashed_password)
 
+#Authenticate user based on username and password
 def authenticate_user(username: str, password: str, db: Session):
     user = Services.get_user_by_username(username, db)
     if not user:
@@ -36,6 +38,7 @@ def authenticate_user(username: str, password: str, db: Session):
         return False
     return user
 
+#Generates a new access token
 def create_token(data: dict, expires_delta: timedelta | None = None):
     to_encode = data.copy()
     if expires_delta:
@@ -46,6 +49,7 @@ def create_token(data: dict, expires_delta: timedelta | None = None):
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm="HS256")
     return encoded_jwt
 
+#Get current user based on the access token. 
 def get_current_user(token: str = Depends(oauth2_scheme)):
     credentials_exception = HTTPException(
         status_code=401,
@@ -54,7 +58,7 @@ def get_current_user(token: str = Depends(oauth2_scheme)):
     )
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
-        username: str = payload.get("sub")
+        username: str = payload.get("username")
         if username is None:
             raise credentials_exception
         token_data = TokenData(username=username)
@@ -65,6 +69,7 @@ def get_current_user(token: str = Depends(oauth2_scheme)):
         raise credentials_exception
     return user
 
+#Obtain an access token from successful login
 def login_for_access_token(form_data: OAuth2PasswordRequestForm, db: Session):
     user = authenticate_user(form_data.username, form_data.password, db)
     if not user:
@@ -75,6 +80,6 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm, db: Session):
         )
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_token(
-        data={"sub": user.id, "name": user.username}, expires_delta=access_token_expires
+        data={"sub": user.id, "username": user.username}, expires_delta=access_token_expires
     )
     return {"access_token": access_token, "token_type": "bearer"}
